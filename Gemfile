@@ -10,6 +10,7 @@ gem 'paperclip-ffmpeg'
 gem 'will_paginate'
 gem "therubyracer"
 gem "less-rails"
+gem 'jwplayer-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
