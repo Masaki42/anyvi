@@ -11,6 +11,9 @@
 	<div class="container">
 		<%= render partial: "shared/navbar" %>
 		
+		<h2 style="color: red"><%= flash[:error] %></h2>
+		<h2 style="color: green"><%= flash[:success] %></h2>
+
 		<%= yield %>
 
 		<%= render partial: "shared/navbar_bot" %>

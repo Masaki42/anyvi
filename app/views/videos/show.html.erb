@@ -1,4 +1,4 @@
-<% @menu_items = ['Me', 'Videos', 'Upload'] %>
+<% @menu_items = {Me: false, Videos: false, Upload: false} %>
 
 <video width="640" height="360" controls>
 	<source src="<%= @video.video_file.url %>" type="<%= @video.video_file_content_type %>" />

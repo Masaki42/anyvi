@@ -1,15 +1,29 @@
-<% @menu_items = {Me: false, Videos: true, Upload: false} %>
+<% @menu_items = { Me: false, Videos: true, Upload: false } %>
 
 <% @videos.each do |video| %>
 <br />
-<video width="640" height="360" controls	>
-	<source src="<%= video.video_file.url %>" type="<%= video.video_file_content_type %>" />
-</video>
 
-<h3><%= video.title %></h3>
+<div class="row">
+  <div class="span7">
+  	<video width="640" height="360" controls	>
+	<source src="<%= video.video_file.url %>" type="<%= video.video_file_content_type %>" />
+	</video>
+  </div>
+  <div class="span1">
+  	<%= link_to(video, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger remove_fields") do %>
+	Delete
+	<% end %>
+  </div>
+</div>
+
+<h3><%= link_to video.title, video_path(video) %></h3>
 <h6>by <%= video.user_id %><br />
 Uploaded at <%= video.created_at %></h6>
+
+<% #= video.inspect %>
+
 <br />
+
 <% end %>
 
 

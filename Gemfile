@@ -6,10 +6,13 @@ gem 'cancan'
 gem 'twitter-bootstrap-rails'
 gem 'delayed_paperclip'
 gem 'delayed_job'
-gem 'paperclip-ffmpeg'
+gem 'paperclip', "~> 3.0"
 gem 'will_paginate'
 gem "therubyracer"
 gem "less-rails"
+gem 'streamio-ffmpeg'
+
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
