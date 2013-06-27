@@ -17,7 +17,12 @@ class VideosController < ApplicationController
 	end
 
 	def create
-		@video = Video.new(params[:video])
+		@video = Video.create(params[:video])
+		if @video.errors.empty?
+			redirect_to video_path(@video)
+		else
+			render "new"
+		end
 	end
 
 	def update		

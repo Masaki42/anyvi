@@ -1,10 +1,12 @@
 <% @menu_items = ['Me', 'Videos', 'Upload'] %>
 <%= render partial: "shared/navbar" %>
-
 <%= jwplayer_assets %>
 
-<%= jwplayer %>
+<%= jwplayer(file: @videos.first.video_file.url)%>
 <h4>Ruby lesson 1</h4>
 <p>by RubySchool</p>
 
-<%= jwplayer(file: "http://github.com/sekrett/jw_player_on_rails/raw/master/video.mp4") %>
+
+
+<%= @videos.inspect %>
+

@@ -1,1 +1,6 @@
-<h1>321</h1>
+<% @menu_items = ['Me', 'Videos', 'Upload'] %>
+<%= render partial: "shared/navbar" %>
+
+<%= image_tag @video.video_file.url %>
+<%= image_tag @video.video_file.url(:medium) %>
+<%= image_tag @video.video_file.url(:thumb) %>

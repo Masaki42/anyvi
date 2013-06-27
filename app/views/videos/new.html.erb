@@ -1,3 +1,10 @@
 <% @menu_items = ['Me', 'Videos', 'Upload*'] %>
 <%= render partial: "shared/navbar" %>
 
+<h1>UPLOAD</h1>
+
+<%= form_for @video, :url => videos_path, :html => { :multipart => true } do |form| %>
+	<p>Title<br /><%= form.text_field :title %></p>
+	<p><%= form.file_field :video_file %></p>
+	<p><%= form.submit "Upload" %></p>
+<% end %>
