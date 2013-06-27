@@ -1,12 +1,15 @@
-<% @menu_items = ['Me', 'Videos', 'Upload'] %>
-<%= render partial: "shared/navbar" %>
-<%= jwplayer_assets %>
+<% @menu_items = {Me: false, Videos: true, Upload: false} %>
 
-<%= jwplayer(file: @videos.first.video_file.url)%>
-<h4>Ruby lesson 1</h4>
-<p>by RubySchool</p>
+<% @videos.each do |video| %>
+<br />
+<video width="640" height="360" controls	>
+	<source src="<%= video.video_file.url %>" type="<%= video.video_file_content_type %>" />
+</video>
 
+<h3><%= video.title %></h3>
+<h6>by <%= video.user_id %><br />
+Uploaded at <%= video.created_at %></h6>
+<br />
+<% end %>
 
-
-<%= @videos.inspect %>
 

@@ -1,9 +1,20 @@
-<% @menu_items = ['Me', 'Videos', 'Upload*'] %>
-<%= render partial: "shared/navbar" %>
+<% @menu_items = {Me: false, Videos: false, Upload: false} %>
 
 <h1>EDIT</h1>
 
 <%= form_for @video, :url => videos_path, :html => { :multipart => true } do |form| %>
-  <%= form.file_field :video_file %>
-  <%= form.submit %>
+	<p>New title:<br /><%= form.text_field :title %></p>
+	<p>Choose a new file:<br />
+	<%= form.file_field :video_file %></p>
+	<p><%= form.submit "Edit" %></p>
 <% end %>
+
+<h2>Existing video</h2>
+
+<video width="640" height="360" controls>
+	<source src="<%= @video.video_file.url %>" type="<%= @video.video_file_content_type %>" />
+</video>
+
+<h3><%= @video.title %></h3>
+<h6>by <%= @video.user_id %><br />
+Uploaded at <%= @video.created_at %></h6>

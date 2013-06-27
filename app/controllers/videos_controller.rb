@@ -29,6 +29,7 @@ class VideosController < ApplicationController
 	end
 
 	def destroy
+		@video.destroy!
 	end
 
 private

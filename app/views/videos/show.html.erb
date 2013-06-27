@@ -1,6 +1,9 @@
 <% @menu_items = ['Me', 'Videos', 'Upload'] %>
-<%= render partial: "shared/navbar" %>
 
-<%= image_tag @video.video_file.url %>
-<%= image_tag @video.video_file.url(:medium) %>
-<%= image_tag @video.video_file.url(:thumb) %>
+<video width="640" height="360" controls>
+	<source src="<%= @video.video_file.url %>" type="<%= @video.video_file_content_type %>" />
+</video>
+
+<h3><%= @video.title %></h3>
+<h6>by <%= @video.user_id %><br />
+Uploaded at <%= @video.created_at %></h6>
