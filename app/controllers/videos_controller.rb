@@ -19,6 +19,7 @@ class VideosController < ApplicationController
 	def create
 		@video = Video.create(params[:video]) 
 		if @video.errors.empty?
+			flash[:success] = "Video was successfully uploaded."
 			redirect_to video_path(@video)
 		else
 			flash[:error] = "You forgot something. Please correct it."

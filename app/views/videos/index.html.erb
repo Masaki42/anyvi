@@ -4,12 +4,12 @@
 <br />
 
 <div class="row">
-  <div class="span7">
+  <div class="span9">
   	<video width="640" height="360" controls	>
 	<source src="<%= video.video_file.url %>" type="<%= video.video_file_content_type %>" />
 	</video>
   </div>
-  <div class="span1">
+  <div class="span5">
   	<%= link_to(video, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger remove_fields") do %>
 	Delete
 	<% end %>

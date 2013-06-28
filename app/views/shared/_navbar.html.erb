@@ -1,17 +1,36 @@
 <div class="row">
-	<div class="span 3"><h1>AnyVi</h1></div>
-	
-	<div class="span 4">
-		<ul class="nav nav-pills">
-			<% @menu_items.each do |item, status| %>
-				<% if status == true %>
-					<li class="active"><a href="#"><%= item %></a></li>
-				<% else %>
-					<li><a href="#"><%= item %></a></li>
-				<% end %>
-			<% end %>
-		</ul>
+
+	<div class="span 3">
+		<h1>AnyVi</h1>
 	</div>
 
+	<div class="span 4">
+		<ul class="nav nav-pills">
+			<li><%= link_to "Videos", root_path %></li>
+		
+			<% if signed_in? %>
+				<li><%= link_to "Upload", new_path %></li>
+				<li id="fat-menu" class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		        	Account <b class="caret"></b>
+		      	</a>
+		      	<ul class="dropdown-menu">
+		        	<li><%= link_to "Me", current_user %></li>
+		        	<li><%= link_to "Settings", '#' %></li>
+		        	<li class="divider"></li>
+		        	<li>
+		          	<%= link_to "Sign out", signout_path, method: "delete" %>
+		        	</li>
+		      	</ul>
+		    	</li>
+		  	<% else %>
+		  		<li><%= link_to "Join", join_path %></li>
+		  		<li><%= link_to "Sign in", signin_path %></li>
+		  		<li><%= link_to "Upload", join_path %></li>
+		  	<% end %>
+		</ul>
+	</div>
 </div>
+
+
 
