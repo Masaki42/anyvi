@@ -1,9 +1,13 @@
 <% @menu_items = {Me: false, Videos: false, Upload: true} %>
 
-<h1>UPLOAD</h1>
-
+<h2>UPLOAD</h2>
+<br />
 <%= form_for @video, :url => videos_path, :html => { :multipart => true } do |form| %>
-	<p>Title<br /><%= form.text_field :title %></p>
-	<p><%= form.file_field :video_file %></p>
-	<p><%= form.submit "Upload" %></p>
+	
+	<%= form.label :title %>
+	<%= form.text_field :title, placeholder: "Please enter a title..." %>
+
+	<p><%= form.file_field :video_file%></p>
+	<br />
+	<%= form.submit "Upload", class: "btn btn-primary" %>
 <% end %>

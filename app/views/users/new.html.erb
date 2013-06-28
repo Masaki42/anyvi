@@ -1,0 +1,22 @@
+<% @menu_items = { Me: true, Videos: false, Upload: false } %>
+
+<h2>JOIN</h2>
+
+<%= form_for(@user) do |f| %>
+
+	<%= render 'shared/error_messages' %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name, placeholder: "Name can't be blank" %>
+
+	<%= f.label :email %>
+	<%= f.text_field :email, placeholder: "example@example.com" %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password, placeholder: "At least 6 symbols long" %>
+
+	<%= f.label :password_confirmation, "Confirmation" %>
+	<%= f.password_field :password_confirmation %>
+	<br />
+	<%= f.submit "Join AnyVi", class: "btn btn-primary" %>
+<% end %>

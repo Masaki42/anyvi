@@ -1,8 +1,13 @@
 Anyvi::Application.routes.draw do
+  
   resources :users
-
-
   resources :videos
+
+  root to: "videos#index"
+
+  match '/join',  to: 'users#new'
+  match '/new',   to: 'videos#new'
+  match '/:id',   to: 'videos#show'
 
 
   # The priority is based upon order of creation:
