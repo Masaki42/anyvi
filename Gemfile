@@ -1,16 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'devise'
-gem 'cancan'
+#gem 'devise'
+#gem 'cancan'
 gem 'twitter-bootstrap-rails'
-gem 'delayed_paperclip'
-gem 'delayed_job'
+#gem 'delayed_paperclip'
+#gem 'delayed_job'
 gem 'paperclip', "~> 3.0"
-gem 'will_paginate'
 gem "therubyracer"
 gem "less-rails"
-gem 'streamio-ffmpeg'
+gem 'bcrypt-ruby', '3.0.1'
 
 
 
