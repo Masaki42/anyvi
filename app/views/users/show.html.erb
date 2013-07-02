@@ -1,7 +1,5 @@
-<% @menu_items = { Me: true, Videos: false, Upload: false } %>
-
 <h2><%= @user.name %></h2>
-<%= gravatar_for @user %>
+<%= gravatar_for @user, size: 200 %>
 <p>Email: <%= @user.email %></p>
 <p>Id: <%= @user.id %></p>
 

@@ -13,9 +13,6 @@ class VideosController < ApplicationController
 		@video = Video.new
 	end
 
-	def edit
-	end
-
 	def create
 		@video = Video.create(params[:video]) 
 		if @video.errors.empty?
@@ -26,6 +23,9 @@ class VideosController < ApplicationController
 			render "new"
 		end
 	end
+
+	def edit
+	end	
 
 	def update
 		@video.update_attributes(params[:video])
